@@ -1,0 +1,24 @@
+{
+  "name": "timehunter",
+  "homepage": "https://github.com/SurgicalSteel0/Timehunter",
+  "authors": [
+    "Denis Priebe <denisrpriebe@gmail.com>"
+  ],
+  "description": "A simple RPG adventure game",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.4",
+    "bootstrap": "3.3.6"
+  },
+  "resolutions": {
+    "jquery": "2.1.4"
+  }
+}
