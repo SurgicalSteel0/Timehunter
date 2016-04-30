@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="panel-body">
-                <form role="form" method="post" action="auth/login" id="loginForm">
+                <form role="form" method="post" action="{{ route('login') }}" id="loginForm">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="loginEmail">Email:</label>
@@ -26,7 +26,7 @@
                             <span class="input-group-addon" id="emailAddon">
                                 <span class="glyphicon glyphicon-user"></span>
                             </span>
-                            <input id="loginEmail" name="email" type="email" class="form-control" placeholder="Email" aria-describedby="emailAddon" required>
+                            <input id="loginEmail" name="email" type="email" class="form-control" placeholder="Email" aria-describedby="emailAddon">
                         </div>
                     </div>
                     <div class="form-group">
@@ -35,7 +35,7 @@
                             <span class="input-group-addon" id="passwordAddon">
                                 <span class="glyphicon glyphicon-lock"></span>
                             </span>
-                            <input id="loginPassword" name="password" type="password" class="form-control" placeholder="Password" aria-describedby="passwordAddon" required>
+                            <input id="loginPassword" name="password" type="password" class="form-control" placeholder="Password" aria-describedby="passwordAddon">
                         </div>
                     </div>
                     <button id="loginBtn" type="submit" class="btn btn-default btn-block">
@@ -66,7 +66,7 @@
                             <span class="input-group-addon" id="firstNameAddon">
                                 <span class="glyphicon glyphicon-user"></span>
                             </span>
-                                <input id="registerFirstName" name="first_name" type="text" class="form-control" placeholder="First Name" aria-describedby="firstNameAddon" required>
+                                <input id="registerFirstName" name="first_name" type="text" class="form-control" placeholder="First Name" aria-describedby="firstNameAddon">
                             </div>
                         </div>
                         <div class="form-group">
@@ -75,7 +75,7 @@
                             <span class="input-group-addon" id="lastNameAddon">
                                 <span class="glyphicon glyphicon-user"></span>
                             </span>
-                                <input id="registerLastName" name="last_name" type="text" class="form-control" placeholder="Last Name" aria-describedby="lastNameAddon" required>
+                                <input id="registerLastName" name="last_name" type="text" class="form-control" placeholder="Last Name" aria-describedby="lastNameAddon">
                             </div>
                         </div>
                         <div class="form-group">
@@ -84,7 +84,7 @@
                             <span class="input-group-addon" id="registerEmailAddon">
                                 <span class="glyphicon glyphicon-user"></span>
                             </span>
-                                <input id="registerEmail" name="email" type="text" class="form-control" placeholder="Email" aria-describedby="registerEmailAddon" required>
+                                <input id="registerEmail" name="email" type="text" class="form-control" placeholder="Email" aria-describedby="registerEmailAddon">
                             </div>
                         </div>
                         <div class="form-group">
@@ -93,7 +93,7 @@
                             <span class="input-group-addon" id="registerPasswordAddon">
                                 <span class="glyphicon glyphicon-lock"></span>
                             </span>
-                                <input id="registerPassword" name="password" type="password" class="form-control" placeholder="Password" aria-describedby="registerPasswordAddon" required>
+                                <input id="registerPassword" name="password" type="password" class="form-control" placeholder="Password" aria-describedby="registerPasswordAddon">
                             </div>
                         </div>
                         <div class="form-group">
@@ -102,13 +102,13 @@
                             <span class="input-group-addon" id="registerConfirmPasswordAddon">
                                 <span class="glyphicon glyphicon-lock"></span>
                             </span>
-                                <input id="registerConfirmPassword" name="password" type="password" class="form-control" placeholder="Confirm Password"
-                                       aria-describedby="registerConfirmPasswordAddon" required>
+                                <input id="registerConfirmPassword" name="password_confirmation" type="password" class="form-control" placeholder="Confirm Password"
+                                       aria-describedby="registerConfirmPasswordAddon">
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-default">
                             <span class="glyphicon glyphicon-plus-sign"></span> Register
                         </button>
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

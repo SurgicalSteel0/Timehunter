@@ -3,22 +3,25 @@
 namespace App\Http\Controllers\Registration;
 
 use App\User;
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Request;
+use App\Http\Requests\RegisterUserRequest;
 use Illuminate\Support\Facades\Redirect;
 
+/**
+ * Class RegistrationController
+ * @package App\Http\Controllers\Registration
+ */
 class RegistrationController extends Controller {
 
     /**
      * Registers a user.
      *
+     * @param RegisterUserRequest $request
      * @return mixed
      */
-    public function doRegister() {
+    public function doRegister(RegisterUserRequest $request) {
 
-        $input = Request::all();
-        User::create($input);
+        User::create($request->all());
 
         return Redirect::route('loginPage')
             ->with('alert', [

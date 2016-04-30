@@ -18,6 +18,7 @@ Route::get('auth/login', [
 ]);
 
 Route::post('auth/login', [
+    'as' => 'login',
     'uses' => 'Login\LoginController@doLogin'
 ]);
 
@@ -26,7 +27,13 @@ Route::post('auth/register', [
     'uses' => 'Registration\RegistrationController@doRegister'
 ]);
 
+Route::get('auth/logout', [
+    'as' => 'logoutPage',
+    'uses' => 'Logout\LogoutController@doLogout'
+]);
+
 Route::get('auth/home', [
+    'as' => 'homePage',
     'uses' => 'Home\HomeController@showHome',
     'middleware' => 'auth'
 ]);
