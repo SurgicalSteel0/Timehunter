@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class LogoutController extends Controller {
 
@@ -18,6 +19,7 @@ class LogoutController extends Controller {
     public function doLogout() {
 
         Auth::logout();
+        Session::flush();
 
         return Redirect::route('loginPage')
             ->with('alert', [

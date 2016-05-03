@@ -7,7 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Race extends Model {
 
     /**
-     * A race belongs to many characters.
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'strength', 'intelligence', 'vitality'
+    ];
+
+    /**
+     * A race has many characters.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */

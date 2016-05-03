@@ -13,9 +13,13 @@ class CreateCharactersTable extends Migration {
      */
     public function up() {
         Schema::create('characters', function (Blueprint $table) {
+
+            $table->engine = 'InnoDB';
+
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('race_id')->unsigned();
+            $table->integer('level')->default(0);
             $table->string('name');
             $table->timestamps();
 
