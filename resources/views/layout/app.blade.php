@@ -7,11 +7,13 @@
 
     <link rel="stylesheet" href="{{ asset('components/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('components/bootstrap/dist/css/bootstrap-theme.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/formValidation.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <script src="{{ asset('components/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/formValidation.min.js') }}"></script>
     <script src="{{ asset('js/formValidationBootstrap.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>

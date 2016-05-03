@@ -12,3 +12,7 @@
 .text-x-small {
     font-size: x-small;
 }
+
+.container-main {
+    margin-top: 70px;
+}

@@ -16,8 +16,15 @@ class LogoutController extends Controller {
      *
      */
     public function doLogout() {
+
         Auth::logout();
-        return Redirect::route('loginPage');
+
+        return Redirect::route('loginPage')
+            ->with('alert', [
+                'type' => 'info',
+                'title' => 'Logged Out',
+                'message' => 'You have successfully logged out.'
+            ]);
     }
 
 }

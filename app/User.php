@@ -30,7 +30,16 @@ class User extends Authenticatable {
      *
      * @param string
      */
-    protected function setPasswordAttribute($value) {
-        $this->attributes['password'] = Hash::make($value);
+    protected function setPasswordAttribute($password) {
+        $this->attributes['password'] = Hash::make($password);
+    }
+
+    /**
+     * A user can have many characters.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function characters() {
+        return $this->hasMany('App\Character');
     }
 }

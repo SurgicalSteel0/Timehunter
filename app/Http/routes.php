@@ -37,3 +37,19 @@ Route::get('auth/home', [
     'uses' => 'Home\HomeController@showHome',
     'middleware' => 'auth'
 ]);
+
+Route::get('auth/characters', [
+    'as' => 'charactersPage',
+    'uses' => 'Character\CharacterController@showCharacters',
+    'middleware' => 'auth'
+]);
+
+Route::post('auth/characters', [
+    'uses' => 'Character\CharacterController@storeCharacter',
+    'middleware' => 'auth'
+]);
+
+Route::get('auth/characters/create', [
+    'uses' => 'Character\CharacterController@createCharacter',
+    'middleware' => 'auth'
+]);

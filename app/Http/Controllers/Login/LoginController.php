@@ -30,7 +30,7 @@ class LoginController extends Controller {
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return Redirect::route('homePage');
+            return Redirect::route('charactersPage');
         } else {
             return Redirect::route('loginPage')
                 ->with('alert', [
