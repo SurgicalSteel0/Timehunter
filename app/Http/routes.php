@@ -15,12 +15,12 @@
  * Login
  *
  */
-Route::get('auth/login', [
+Route::get('login', [
     'as' => 'loginPage',
     'uses' => 'Login\LoginController@showLogin',
     'middleware' => 'guest'
 ]);
-Route::post('auth/login', [
+Route::post('login', [
     'as' => 'login',
     'uses' => 'Login\LoginController@doLogin'
 ]);
@@ -38,7 +38,7 @@ Route::post('auth/register', [
  * Logout
  *
  */
-Route::get('auth/logout', [
+Route::get('logout', [
     'as' => 'logoutPage',
     'uses' => 'Logout\LogoutController@doLogout'
 ]);
@@ -76,9 +76,25 @@ Route::post('auth/characters/play', [
     'middleware' => 'auth'
 ]);
 
-Route::get('auth/test', function () {
+class Foo {
 
-    $characters = Auth::user()->characters()->with('race')->get()->toArray();
+}
 
-    return dd($characters);
+class Bar {
+
+    public $foo;
+
+    public function __construct(Foo $foo) {
+        $this->foo = $foo;
+    }
+}
+
+Route::get('bar', function (Bar $bar) {
+    dd($bar->foo);
+});
+
+use App\Models\Race;
+
+Route::get('test', function () {
+    dd(implode('|', Race::lists('id')->toArray()));
 });

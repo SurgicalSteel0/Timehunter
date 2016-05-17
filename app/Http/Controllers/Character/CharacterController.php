@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Character;
 
-use App\Race;
-use App\Character;
+use App\Models\Race;
+use App\Models\Character;
 use App\Http\Requests\CreateCharacterRequest;
 use App\Http\Requests\PlayCharacterRequest;
 use App\Http\Controllers\Controller;
@@ -36,10 +36,8 @@ class CharacterController extends Controller {
      */
     public function createCharacter(CreateCharacterRequest $request) {
 
-        $character = $request->all();
-        $character['user_id'] = Auth::id();
-
-        Character::create($character);
+        $character = new Character($request->all());
+        Auth::user()->characters()->save($character);
 
         return Redirect::route('charactersPage')
             ->with('alert', [

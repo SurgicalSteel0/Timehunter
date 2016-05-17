@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder {
             [
                 'first_name' => 'Denis',
                 'last_name' => 'Priebe',
-                'email' => 'denis.priebe@mnsu.edu',
+                'email' => 'denisrpriebe@gmail.com',
                 'password' => Hash::make('12500'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')

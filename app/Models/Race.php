@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,7 +21,7 @@ class Race extends Model {
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function character() {
-        return $this->hasMany('App\Character');
+        return $this->hasMany('App\Models\Character');
     }
 
 }

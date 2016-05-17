@@ -16,7 +16,7 @@ class LoginController extends Controller {
      * @return mixed
      */
     public function showLogin() {
-        return View::make('pages.auth.login');
+        return View::make('pages.login');
     }
 
     /**

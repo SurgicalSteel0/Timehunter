@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Support\Facades\Hash;
@@ -40,6 +40,6 @@ class User extends Authenticatable {
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function characters() {
-        return $this->hasMany('App\Character');
+        return $this->hasMany('App\Models\Character');
     }
 }

@@ -19,7 +19,7 @@ class CreateCharactersTable extends Migration {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('race_id')->unsigned();
-            $table->integer('level')->default(0);
+            $table->integer('level')->default(1);
             $table->string('name');
             $table->timestamps();
 

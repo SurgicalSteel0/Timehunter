@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Race;
 
 class CreateCharacterRequest extends Request {
 
@@ -19,12 +20,14 @@ class CreateCharacterRequest extends Request {
     /**
      * Get the validation rules that apply to the request.
      *
-     * @todo auto-generate the race_id
      * @return array
      */
     public function rules() {
+
+        $availableRaces = implode(',', Race::lists('id')->toArray());
+
         return [
-            'race_id' => 'required|in:1,2,3',
+            'race_id' => 'required|in:' . $availableRaces,
             'name' => 'required|min:1'
         ];
     }
